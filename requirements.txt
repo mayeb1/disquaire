@@ -1,0 +1,5 @@
+numpy==1.24.1
+Pillow==9.3.0
+six==1.16.0
+wxPython==4.2.0
+attrdict3==2.0.2
