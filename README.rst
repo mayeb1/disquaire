@@ -1,6 +1,8 @@
-#############################------------------README----------------------##############################
+#################------------README------------#################
+
+
 STEP 1:
-Setup python3.10
+we need python version 3.10 or above
 
 For Linux
 sudo apt install build-essential
