@@ -5,7 +5,7 @@ sys.path.insert(0, os.path.abspath('..'))
 from src.tools import SliceBaseTitle
 
 class Test_SliceBaseTitle(unittest.TestCase):
-    def test_success_whithout_mode(self):
+    def test_success_without_mode(self):
         actual = SliceBaseTitle(title= "Star wars 2")
         expected = ("Star wars",None)
         self.assertEqual(actual, expected)

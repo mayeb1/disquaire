@@ -12,7 +12,9 @@ STEP 2:
 
 Before to start the program, you have to setup all packages in requirements.txt
 
-You can use the program whithout wxPython, however there will not be graphics interface
+You can use the program without wxPython, however there will not be graphics interface
+
+python3.10 -m pip -r requirements.txt
 
 STEP 3:
 
@@ -29,6 +31,13 @@ you can add argument like (-a,--p,-d,-g, -m)
 -g graphics mode
 
 -m this is an addictionnal mode, all the saga cost 15 euros (not only Back to the Future)
+
+ex:input = [avatar 1, avatar 2, avatar 3 ,La chèvre] --> output = 56
+input =["Back to the Future 1","Back to the Future 2","Back to the Future 3","La chèvre"] --> output = 56
+
+without "-m" argument:
+input = [avatar 1, avatar 2, avatar 3 ,La chèvre] --> output = 80
+input =["Back to the Future 1","Back to the Future 2","Back to the Future 3","La chèvre"] --> output = 56
 
 Example:
 
