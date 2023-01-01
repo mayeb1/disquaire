@@ -18,7 +18,7 @@ python3.10 -m pip -r requirements.txt
 
 STEP 3:
 
-main.py file lunch the program:
+main.py file start the program:
 
 you can add argument like (-a,--p,-d,-g, -m)
 
@@ -30,7 +30,7 @@ you can add argument like (-a,--p,-d,-g, -m)
 
 -g graphics mode
 
--m this is an addictionnal mode, all the saga cost 15 euros (not only Back to the Future)
+-m this is an additional mode, all the saga cost 15 euros (not only Back to the Future)
 
 ex:input = [avatar 1, avatar 2, avatar 3 ,La chèvre] --> output = 56
 input =["Back to the Future 1","Back to the Future 2","Back to the Future 3","La chèvre"] --> output = 56
@@ -41,11 +41,11 @@ input =["Back to the Future 1","Back to the Future 2","Back to the Future 3","La
 
 Example:
 
-python3.10 main.py -a : lunch programm in the console and add movie in the console
+python3.10 main.py -a : start program in the console and add movie in the console
 
-python3.10 main.py -a -p path_to_file: lunch programm in the console, add movie to the list of movie already added from text file
+python3.10 main.py -a -p path_to_file: start program in the console, add movie to the list of movie already added from text file
 
-python3.10 main.py -g : lunch graphic programm, you can drag and drom text files  (work only in Windows) and add movie in text field
+python3.10 main.py -g : start graphic program, you can drag and drop text files  (work only in Windows) and add movie in text field
 
 You can't do:
 
