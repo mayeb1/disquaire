@@ -8,7 +8,7 @@ class Saga:
     def __init__(self,title:str,episode:str,debug:str=''):
 
         '''
-        if episode = 'not saga' , the movie isn't yet a saga
+        if episode = 'None' , the movie isn't yet a saga
 
         Example:
 
@@ -17,8 +17,8 @@ class Saga:
         self._total_price = 48 euros
         '''
 
-        self._basetitle = title
-        self._nomenclature={}        #{episode : number of purchase}
+        self._basetitle = title      # basetitle of Back to the Future 2 is Back to the Future
+        self._nomenclature={}        # {episode : number of purchase}
         self._total_price = 0        # calculed price
         self._reduction=[0.1,0.2]    # reduction of 10% or 20%
         self._sagaPrice = 15         # price of 15 euros for saga
@@ -50,8 +50,8 @@ class Saga:
         total_price = 0
         match number_of_episode:
             case 1:
-                if "not saga" in self._nomenclature:
-                   total_price = self._usualPrice*self._nomenclature["not saga"]
+                if None in self._nomenclature:
+                   total_price = self._usualPrice*self._nomenclature[None]
                 else:
                    total_price = self._sagaPrice*self._nomenclature["1"]
 

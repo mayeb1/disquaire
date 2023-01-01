@@ -34,9 +34,10 @@ class MyFrame(wx.Frame):
     '''
 
     #----------------------------------------------------------------------
-    def __init__(self,debug:str=''):
+    def __init__(self,debug:str='',mode:bool=False):
         wx.Frame.__init__(self, None, title="Disquaire",size=(800,300))
         self.debug =debug
+        self.mode=mode
 
         self.mainPanel = wx.Panel(self)
 
@@ -127,7 +128,7 @@ class ResultPanel(wx.Panel):
 
     def _OnButtonClickPrice(self, event):
         self.response.Clear()
-        self.response.write(str(OrderPrice(self.orderList,self.debug)))
+        self.response.write(str(OrderPrice(self.orderList,self.debug,mode = self.parentFrame.mode)))
 
 
     def _OnButtonClickReset(self, event):

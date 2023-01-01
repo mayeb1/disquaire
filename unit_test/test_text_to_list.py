@@ -6,7 +6,7 @@ from src.tools import Text_to_List
 
 class Test_Text_to_List(unittest.TestCase):
     def test_success(self):
-        actual = Text_to_List(path='./test.txt')
+        actual = Text_to_List(path='./unit_test/test.txt')
         expected = ["Back to the Future 1","Back to the Future 2","Back to the Future 3","La chèvre"]
         self.assertEqual(actual, expected)
 

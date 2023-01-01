@@ -1,14 +1,11 @@
 import sys
 from .movie import Saga
 
-try:
-    debug = sys.argv[1]
-except:
-    debug=0
+
 
 def Text_to_List(path:str,debug:str='') -> list:
     '''
-    process text file to list
+    Transform text file to list
     '''
     if debug == '--debug':
         print(path)
@@ -32,13 +29,14 @@ def Text_to_List(path:str,debug:str='') -> list:
         return list()
 
 
-def SliceBaseTitle(title:str,debug:str='') -> str:
+def SliceBaseTitle(title:str,debug:str='',mode:bool=False) -> str:
     '''
     if title = Star wars 2 return [Star wars,2]
+    if title = Star wars II return  [Star wars,II]
     '''
-    roman_numbers=['I','II','III','IV','V','VI','VII','VIII','IX','X']
+    roman_numbers=['I','II','III','IV','V','VI','VII','VIII','IX','X','XI','XII']
     res = ''
-    deleted = "not saga"
+    deleted = None
     try:
         elements = title.split(' ')
 
@@ -47,35 +45,50 @@ def SliceBaseTitle(title:str,debug:str='') -> str:
 
 
     if debug == "--debug":
-       print("List of words in title : ",elements)
+       print("Sliced title : ",elements)
     if elements[-1].isdigit():
         deleted =elements.pop(-1)
         if debug == "--debug":
-            print("Episode : ",deleted)
+            print("Episode number : ",deleted)
     else:
         if elements[-1] in roman_numbers:
            deleted= elements.pop(-1)
            if debug == "--debug":
-              print("Episode:",deleted)
+              print("Episode number :",deleted)
 
 
     for ele in elements:
         res= res + ele + ' '
-    return res.strip(),deleted
+    res = res.strip()
+
+    if mode == True:
+        return res,deleted
+    else:
+        if res.lower() != "back to the future":
+           return res.strip(),None
+        else:
+            return res.strip(),deleted
 
 
 
 
 
-def OrderPrice(orderList:list = [],debug:str=''):
+def OrderPrice(orderList:list = [],debug:str='',mode:bool=False):
     '''
     Create Saga object per Saga, and sum all price gathered from saga objects
+    if input = [Back to the Future 1,Back to the Future 2,Back to the Future 3,La chèvre] --> return :{"Back to the Future" : Saga object, "La chèvre" : Saga object}
+    '''
+    sagaDict = {}
+    price = 0
 
     '''
-    sagaDict = {}  # {"Star wars" : Saga object, "Avatar" : Saga object}
-    price = 0
+    if this is the first time we meet a movie, we create a saga object for him,
+    ex: if we have Back to the Future 1, we create , Back to the Future saga object, then if we have Back to the Future 2,
+    we not consider it as a new movie but as an extension, a new episode.
+    if we have already meet the movie, we add episode to the saga object already created
+    '''
     for movie in orderList:
-        title,episode = SliceBaseTitle(movie,debug)
+        title,episode = SliceBaseTitle(movie,debug,mode)
 
         if title not in sagaDict:
             sagaDict[title] = Saga(title = title, episode = episode,debug=debug)
