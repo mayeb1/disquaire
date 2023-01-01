@@ -47,7 +47,7 @@ If you want to try drag and drop order file, you can find text file named test.t
 
 ---------------------------Unit Test--------------------------
 
-If you want test if functions are ok, there are unit test for each function in unit_test folder
+If you want test if functions are ok, there are unit test for each function in unit_test folder.
 
 python3.10 -m unittest .\unit_test\test_orderPrice.py
 
