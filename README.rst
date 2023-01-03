@@ -1,5 +1,18 @@
 #################------------README------------#################
 
+This project is composed of:
+
+src:
+
+  ->menu.py graphics software
+
+  ->movie.py contain an object saga
+  
+  ->tools.py contain tools(methods)
+
+init_test contain all unit test of methods in tools.py
+
+main.py: strat program
 
 STEP 1:
 we need python version 3.10 or above
