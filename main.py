@@ -165,3 +165,5 @@ if __name__ =="__main__":
              print("###########################Cannot use graphics software with -p or -a, refer to README to use arguments correctly########################")
         case [True,True,False,True]:
              print("###########################Cannot use graphics software with -p or -a, refer to README to use arguments correctly########################")
+        case [False,False,False,False]:
+             print("########################### Refer to README, you have to put argument ########################")
